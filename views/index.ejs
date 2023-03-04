@@ -30,9 +30,10 @@
       </form>
       <!-- list of players -->
       <ul>
-        <% if(players.length > 0){ %>
-        <li><%= players[1] %></li>
-        <% }else{ %>
+        <% if(players.length > 0){ %> <% for(let x = 0; x < players.length;
+        x++){ %>
+        <li><%= players[x] %></li>
+        <% } %> <% }else{ %>
         <p>no data found</p>
         <% } %>
       </ul>
