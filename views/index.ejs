@@ -30,7 +30,11 @@
       </form>
       <!-- list of players -->
       <ul>
-        <li><%= players %></li>
+        <% if(players.length > 0){ %>
+        <li><%= players[1] %></li>
+        <% }else{ %>
+        <p>no data found</p>
+        <% } %>
       </ul>
     </main>
     <footer>
