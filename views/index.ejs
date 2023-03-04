@@ -7,6 +7,34 @@
     <title>ejs lessons</title>
   </head>
   <body>
-    <h1>Welcome to ejs chapter lessons!</h1>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <form action="/" method="post">
+        <input
+          type="text"
+          placeholder="Favourite Player Name"
+          name="favPlayer"
+        />
+        <button type="submit">Add</button>
+      </form>
+      <!-- list of players -->
+      <ul>
+        <li><%= players %></li>
+      </ul>
+    </main>
+    <footer>
+      <p>All rights reserved by &copy; Muhammad Azizul Hoque Jiku</p>
+    </footer>
   </body>
 </html>

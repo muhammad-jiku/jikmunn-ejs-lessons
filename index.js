@@ -2,10 +2,26 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5001;
 
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
+
 app.set('view engine', 'ejs');
 
+let favPlayers = [];
+
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', {
+    players: favPlayers,
+  });
+});
+
+app.post('/', (req, res) => {
+  const { favPlayer } = req.body;
+  favPlayers.push(favPlayer);
+  res.redirect('/');
 });
 
 app.listen(PORT, () => {
