@@ -1,45 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ejs lessons</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/contact">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <form action="/" method="post">
-        <input
-          type="text"
-          placeholder="Favourite Player Name"
-          name="favPlayer"
-        />
-        <button type="submit">Add</button>
-      </form>
-      <!-- list of players -->
-      <ul>
-        <% if(players.length > 0){ %> <% for(let x = 0; x < players.length;
-        x++){ %>
-        <li><%= players[x] %></li>
-        <% } %> <% }else{ %>
-        <p>no data found</p>
-        <% } %>
-      </ul>
-    </main>
-    <footer>
-      <p>All rights reserved by &copy; Muhammad Azizul Hoque Jiku</p>
-    </footer>
-  </body>
-</html>
+<%- include("layout/header") %>
+<main>
+  <form action="/" method="post">
+    <input type="text" placeholder="Favourite Player Name" name="favPlayer" />
+    <button type="submit">Add</button>
+  </form>
+  <!-- list of players -->
+  <ul>
+    <% if(players.length > 0){ %> <% for(let x = 0; x < players.length; x++){ %>
+    <li><%= players[x] %></li>
+    <% } %> <% }else{ %>
+    <p>no data found</p>
+    <% } %>
+  </ul>
+</main>
+<%- include("layout/footer") %>
